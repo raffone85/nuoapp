@@ -12,39 +12,180 @@
    DESIGN SYSTEM
 ═══════════════════════════════════════════ */
 :root {
-  --bg:         #f5f7fa;
-  --bg2:        #eef1f6;
-  --surface:    #ffffff;
-  --surface2:   #f0f3f8;
-  --surface3:   #e4e9f2;
-  --border:     #d0d8e8;
-  --border2:    #b8c5d8;
+  --bg:         #06080c;
+  --bg2:        #0a0e16;
+  --surface:    #0f1520;
+  --surface2:   #141c2a;
+  --surface3:   #1a2335;
+  --border:     #1e2d42;
+  --border2:    #253448;
 
-  --cyan:       #0077cc;
-  --cyan-dim:   rgba(0,119,204,.12);
-  --cyan-glow:  0 0 20px rgba(0,119,204,.25);
-  --orange:     #e05a00;
-  --orange-dim: rgba(224,90,0,.1);
-  --green:      #1a8a3a;
-  --green-dim:  rgba(26,138,58,.1);
-  --yellow:     #b07d00;
-  --yellow-dim: rgba(176,125,0,.1);
-  --red:        #cc1033;
-  --red-dim:    rgba(204,16,51,.08);
-  --purple:     #8800cc;
-  --purple-dim: rgba(136,0,204,.08);
+–cyan:       #00d4ff;
+–cyan-dim:   rgba(0,212,255,.15);
+–cyan-glow:  0 0 20px rgba(0,212,255,.3);
+–orange:     #ff7043;
+–orange-dim: rgba(255,112,67,.12);
+–green:      #00e676;
+–green-dim:  rgba(0,230,118,.12);
+–yellow:     #ffd600;
+–yellow-dim: rgba(255,214,0,.12);
+–red:        #ff1744;
+–red-dim:    rgba(255,23,68,.12);
+–purple:     #d500f9;
+–purple-dim: rgba(213,0,249,.1);
 
-  --text:       #1a2030;
-  --text-2:     #4a5870;
-  --text-3:     #8090a8;
+–text:       #dce8f5;
+–text-2:     #8ba0b8;
+–text-3:     #4a6070;
 
-  --r:    6px;
-  --r-lg: 14px;
-  --r-xl: 20px;
+–r:    6px;
+–r-lg: 14px;
+–r-xl: 20px;
 
-  --slip-w: 320px;
-  --header-h: 54px;
+–slip-w: 320px;
+–header-h: 54px;
 }
+
+/* ═══════════════════════════════════════════
+TEMA CHIARO — classe .light sul body
+═══════════════════════════════════════════ */
+body.light {
+–bg:         #f4f6fb;
+–bg2:        #edf0f7;
+–surface:    #ffffff;
+–surface2:   #f0f3fa;
+–surface3:   #e4e9f5;
+–border:     #d0d8ec;
+–border2:    #b8c5dc;
+
+–cyan:       #0069cc;
+–cyan-dim:   rgba(0,105,204,.1);
+–cyan-glow:  0 0 16px rgba(0,105,204,.2);
+–orange:     #d44f00;
+–orange-dim: rgba(212,79,0,.1);
+–green:      #1a7a35;
+–green-dim:  rgba(26,122,53,.1);
+–yellow:     #996600;
+–yellow-dim: rgba(153,102,0,.1);
+–red:        #cc0022;
+–red-dim:    rgba(204,0,34,.08);
+–purple:     #7700bb;
+–purple-dim: rgba(119,0,187,.08);
+
+–text:       #1a2238;
+–text-2:     #3d5070;
+–text-3:     #7a90b0;
+
+background: var(–bg);
+color: var(–text);
+}
+
+/* Sfondo body hardcodato → override */
+body.light::before { display: none; }
+body.light { background: #f4f6fb !important; }
+
+/* Tutti i colori hardcodati nei componenti */
+body.light header {
+background: rgba(244,246,251,.97) !important;
+border-color: var(–border);
+}
+body.light .bet-slip {
+background: #edf0f7 !important;
+border-color: var(–border);
+}
+body.light .log-terminal,
+body.light .mini-log { background: #e8ecf5 !important; }
+body.light .json-viewer { background: #e8ecf5 !important; }
+
+/* Card e superfici hardcodate */
+body.light .match-card { background: #fff !important; border-color: var(–border); }
+body.light .mc-detail   { background: #f0f3fa !important; }
+body.light .ia-card      { background: #fff !important; }
+body.light .ia-card-inner{ background: #fff !important; }
+body.light .ia-block      { background: #f0f3fa !important; border-color: var(–border); }
+body.light .ia-block-cell { background: #f0f3fa !important; }
+body.light .ia-block-title{ background: rgba(0,0,0,.04) !important; }
+body.light .pcard         { background: #fff !important; border-color: var(–border); }
+body.light .pcard-content { background: #fff !important; }
+body.light .sched-card    { background: #fff !important; }
+body.light .slip-item     { background: #f0f3fa !important; border-color: var(–border); }
+body.light .toppick-chip  { background: #f0f3fa !important; }
+body.light .home-step     { background: #fff !important; border-color: var(–border); }
+body.light .um-card       { background: #f0f3fa !important; border-color: var(–border); }
+body.light .um-card.loaded{ background: rgba(26,122,53,.06) !important; border-color: var(–green); }
+body.light .filters-bar   { background: #fff !important; border-color: var(–border); }
+body.light .upload-panel  { background: #fff !important; }
+body.light .detail-kv     { background: #f0f3fa !important; border-color: var(–border); }
+body.light .motivation-box{ background: #f0f3fa !important; border-color: var(–border); }
+body.light .player-rules-box{ background: rgba(0,105,204,.05) !important; }
+body.light .onboard-hint  { background: #fff !important; border-color: var(–border); }
+body.light .dash-stats     { background: #fff !important; border-color: var(–border); }
+body.light .toppick-bar    { background: rgba(26,122,53,.05) !important; }
+body.light .sort-bar,
+body.light .qfilter-row    { background: transparent !important; }
+body.light .pstat-pill     { background: #e8ecf5 !important; border-color: var(–border); color: var(–text-2); }
+body.light .pstat-pill.hot { background: rgba(153,102,0,.12) !important; color: #886000 !important; }
+body.light .pstat-pill.fire{ background: rgba(204,0,34,.1) !important;  color: #cc0022 !important; }
+body.light .pstat-pill.ok  { background: rgba(0,105,204,.1) !important; color: #0060bb !important; }
+body.light .pstat-pill.green{background: rgba(26,122,53,.1) !important; color: #177030 !important; }
+body.light .sig-pill       { border-color: var(–border) !important; }
+
+/* Testo scuro hardcodato nelle card giocatori */
+body.light .pcard-nome    { color: #1a2238 !important; }
+body.light .pcard-squadra { color: #5a6e8a !important; }
+body.light .pcard-partita { color: #5a6e8a !important; }
+body.light .ia-evento     { color: #1a2238 !important; }
+body.light .ia-cell-val   { color: #3d5070 !important; }
+body.light .ia-cell-val.aff-forte { color: #1a7a35 !important; }
+body.light .ia-cell-val.aff-medio { color: #886000 !important; }
+body.light .ia-cell-val.aff-debole{ color: #8090a8 !important; }
+body.light .ia-cell-label { color: #7a90b0 !important; }
+
+/* Cerchi ritardo giocatori */
+body.light .pcard-rit.rit-hot {
+color: #5c3d00 !important;
+background: linear-gradient(135deg,#ffd600,#ff8f00) !important;
+border-color: #cc8800 !important;
+}
+body.light .pcard-rit.rit-ok {
+color: #004488 !important;
+background: rgba(0,105,204,.12) !important;
+border-color: rgba(0,105,204,.4) !important;
+}
+
+/* Bottom nav */
+body.light .bottom-nav {
+background: rgba(244,246,251,.97) !important;
+border-color: var(–border);
+}
+body.light .bnav-btn { color: var(–text-3) !important; }
+body.light .bnav-btn.active { color: var(–cyan) !important; }
+
+/* Scroll */
+body.light ::-webkit-scrollbar-track { background: #e8ecf5; }
+body.light ::-webkit-scrollbar-thumb { background: #b8c5dc; }
+
+/* Griglia e grafico score ring */
+body.light .score-ring .track { stroke: #d8e2f0 !important; }
+
+/* Sec tabs e mktab */
+body.light .sec-tab  { color: var(–text-3); }
+body.light .sec-tab.active { color: var(–cyan); background: rgba(0,105,204,.05); }
+body.light .mktab    { background: #f0f3fa; border-color: var(–border); color: var(–text-3); }
+body.light .mktab.active { background: var(–cyan-dim); border-color: var(–cyan); color: var(–cyan); }
+body.light .qfbtn    { border-color: var(–border); color: var(–text-3); }
+body.light .qfbtn.active { background: var(–surface2); border-color: var(–cyan); color: var(–cyan); }
+body.light .sort-btn  { border-color: var(–border); color: var(–text-3); }
+body.light .sort-btn.active { border-color: var(–cyan); color: var(–cyan); background: var(–cyan-dim); }
+
+/* Log text */
+body.light .log-m  { color: #2a3a55 !important; }
+body.light .log-t  { color: #8090a8 !important; }
+body.light .tag.INFO  { color: #0060bb !important; background: rgba(0,105,204,.1) !important; }
+body.light .tag.OK    { color: #177030 !important; background: rgba(26,122,53,.1) !important; }
+body.light .tag.WARN  { color: #886000 !important; background: rgba(153,102,0,.1) !important; }
+body.light .tag.ERR   { color: #cc0022 !important; background: rgba(204,0,34,.08) !important; }
+body.light .tag.MATCH { color: #d44f00 !important; background: rgba(212,79,0,.1) !important; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 14px; scroll-behavior: smooth; }
@@ -1814,6 +1955,10 @@ BET SLIP — bigger
 <header>
   <div class="logo">Scout<em>AI</em></div>
   <div id="headerViewLabel" style="flex:1;font-size:1rem;font-weight:700;color:var(--text-2);padding-left:.5rem;">Home</div>
+  <button id="themeBtn" onclick="toggleTheme()" style="
+    background:none;border:1px solid var(--border);border-radius:var(--r);
+    color:var(--text-2);font-size:.85rem;padding:.3rem .6rem;cursor:pointer;
+    transition:all .2s;flex-shrink:0" title="Cambia tema">🌙</button>
   <button class="slip-toggle-btn" onclick="toggleSlip()">
     🎫 <span class="slip-count" id="slipCount">0</span>
   </button>
@@ -4494,6 +4639,27 @@ document.addEventListener('keydown',e=>{
 });
 
 /* ═══════════════════════════════════════════
+   TEMA CHIARO / SCURO
+═══════════════════════════════════════════ */
+function toggleTheme(){
+  const isLight = document.body.classList.toggle('light');
+  const btn = document.getElementById('themeBtn');
+  if(btn) btn.textContent = isLight ? '☀️' : '🌙';
+  try { localStorage.setItem('scoutai_theme', isLight?'light':'dark'); } catch(e){}
+}
+
+function applyStoredTheme(){
+  try {
+    const t = localStorage.getItem('scoutai_theme');
+    if(t==='light'){
+      document.body.classList.add('light');
+      const btn=document.getElementById('themeBtn');
+      if(btn) btn.textContent='☀️';
+    }
+  } catch(e){}
+}
+
+/* ═══════════════════════════════════════════
    PERSISTENZA — localStorage
 ═══════════════════════════════════════════ */
 const STORAGE_MODS=['mod1','mod2','mod3','mod4','mod5','mod6','mod7','mod8','mod9','mod10'];
@@ -4549,6 +4715,8 @@ function clearStorage(){
    INIT
 ═══════════════════════════════════════════ */
 renderUploadGrid();
+// Applica tema salvato
+applyStoredTheme();
 // Ripristina CSV salvati PRIMA di tutto il resto
 const nRestored = restoreFromStorage();
 renderSlip();
