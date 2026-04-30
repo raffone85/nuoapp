@@ -5,6 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>ScoutAI Pro — Betting Intelligence</title>
+<!-- Applica tema PRIMA del render per evitare flash bianco -->
+<script>
+(function(){
+  try {
+    const t=localStorage.getItem('scoutai_theme');
+    if(t==='light') document.documentElement.classList.add('light-mode');
+    // Se non impostato o 'dark', forza dark cancellando eventuali residui
+    if(!t||t==='dark'){
+      localStorage.setItem('scoutai_theme','dark');
+      document.documentElement.classList.remove('light-mode');
+    }
+  }catch(e){}
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,300;0,500;0,700;1,300&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -4651,10 +4665,17 @@ function toggleTheme(){
 function applyStoredTheme(){
   try {
     const t = localStorage.getItem('scoutai_theme');
+    // Default: dark. Applica light solo se esplicitamente scelto
     if(t==='light'){
       document.body.classList.add('light');
       const btn=document.getElementById('themeBtn');
       if(btn) btn.textContent='☀️';
+    } else {
+      // Assicura dark mode
+      document.body.classList.remove('light');
+      localStorage.setItem('scoutai_theme','dark');
+      const btn=document.getElementById('themeBtn');
+      if(btn) btn.textContent='🌙';
     }
   } catch(e){}
 }
